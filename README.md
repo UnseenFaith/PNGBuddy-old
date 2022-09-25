@@ -3,7 +3,6 @@ A PNGTuber program similar to [veadotube mini](https://olmewe.itch.io/veadotube-
 
 ## Requirements
 - OBS (v28.0.0 or later)
-- .NET 6.0 Runtime (Included in installation)
 - Windows Only
 
 ## Features
@@ -25,7 +24,7 @@ A PNGTuber program similar to [veadotube mini](https://olmewe.itch.io/veadotube-
 
 ## Installing
 The installer for PNGBuddy uses ClickOnce and will install the .NET 6 Runtime and automatically check for update when launching. You can download it here: 
-[PNGBuddy](https://raw.githubusercontent.com/UnseenFaith/PNGBuddy/master/docs/setup.exe)
+[PNGBuddy](https://raw.githubusercontent.com/UnseenFaith/PNGBuddy/master/PNGBuddy.exe)
 
 May add portable downloads in the future, but for now this should suffice.
 

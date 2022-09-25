@@ -1,4 +1,5 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using AutoUpdaterDotNET;
+using MaterialDesignThemes.Wpf;
 using Microsoft.VisualBasic;
 using PNGBuddy.Messages;
 using PNGBuddy.Messages.Hello;
@@ -45,6 +46,9 @@ namespace PNGBuddy
         {
             InitializeComponent();
             Initialize();
+
+            AutoUpdater.Start("https://rbsoft.org/updates/AutoUpdaterTest.xml");
+
 
             BlinkTimer = new() { Interval = TimeSpan.FromMilliseconds(Settings.Default.BLINK_INTERVAL) };
 
