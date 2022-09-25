@@ -36,8 +36,8 @@ May add portable downloads in the future, but for now this should suffice.
   - Ability to create multiple profiles that allows the user to quickly select different avatars without having to select each one manually.
 - Revert Window Chrome
   - Custom window chromes are nice, but it messes with the client area recognition of Windows. I will probably revert the window chrome and change the way users access the settings window in the future.
-- Make Application handle it's own scene
-  - Currently the user has to add a scene manually for the application to work. This could be extracted and done by the program automatically so that the user doesn't have to worry about it. There's almost no benefit to implementing this other than convenience, but it is possible.
+- Make Application handle it's own source
+  - Currently the user has to add a source manually for the application to work. This could be extracted and done by the program automatically so that the user doesn't have to worry about it. There's almost no benefit to implementing this other than convenience, but it is possible.
 
 > I'm open to any other suggestions or ideas
 
