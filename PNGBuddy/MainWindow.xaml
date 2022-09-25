@@ -164,16 +164,16 @@
 
         <Grid HorizontalAlignment="Stretch">
             <Image
-                Name="Ani"
+                Name="Idle"
                 RenderOptions.BitmapScalingMode="HighQuality"
-                SourceUpdated="Ani_SourceUpdated"
-                TargetUpdated="Ani_SourceUpdated">
+                SourceUpdated="Idle_SourceUpdated"
+                TargetUpdated="Idle_SourceUpdated">
                 <Image.Source>
                     <local:SettingBinding Mode="TwoWay" Path="IDLE_PICTURE" />
                 </Image.Source>
             </Image>
             <Image
-                Name="Bloby"
+                Name="Chat"
                 RenderOptions.BitmapScalingMode="HighQuality"
                 Visibility="Hidden">
                 <Image.Source>

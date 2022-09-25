@@ -33,9 +33,8 @@ namespace PNGBuddy
 
         public DispatcherTimer BlinkTimer;
 
-        public bool Speaking = false;
-        public bool Blinking = false;
-
+        public bool Speaking { get; set; } = false;
+        public bool Blinking { get; set; } = false;
         public bool Muted { get; set; } = false;
 
         public ShakeBehavior ShakeBehavior = new();
@@ -158,7 +157,7 @@ namespace PNGBuddy
                                             Speaking = true;
                                             /*if (currentVolume > -20)
                                             {
-                                                Bloby.Visibility = Visibility.Hidden;
+                                                Chat.Visibility = Visibility.Hidden;
                                                 ShakePicture.Visibility = Visibility.Visible;
                                             } else
                                             {*/
@@ -167,21 +166,21 @@ namespace PNGBuddy
                                             if (Blinking)
                                             {
                                                 BlinkSpeakPicture.Visibility = Visibility.Visible;
-                                                Bloby.Visibility = Visibility.Hidden;
+                                                Chat.Visibility = Visibility.Hidden;
                                             }
                                             else
                                             {
-                                                Bloby.Visibility = Visibility.Visible;
+                                                Chat.Visibility = Visibility.Visible;
                                                 BlinkSpeakPicture.Visibility = Visibility.Hidden;
                                             }
                                             //}
-                                            Ani.Visibility = Visibility.Hidden;
+                                            Idle.Visibility = Visibility.Hidden;
                                         }
                                         else
                                         {
                                             Speaking = false;
                                             ShakePicture.Visibility = Visibility.Hidden;
-                                            Bloby.Visibility = Visibility.Hidden;
+                                            Chat.Visibility = Visibility.Hidden;
 
                                             if (Blinking)
                                             {
@@ -193,7 +192,7 @@ namespace PNGBuddy
                                                 BlinkSpeakPicture.Visibility = Visibility.Hidden;
                                                 BlinkPicture.Visibility = Visibility.Hidden;
                                             }
-                                            Ani.Visibility = Visibility.Visible;
+                                            Idle.Visibility = Visibility.Visible;
                                         }
                                     });
                                 }
@@ -213,12 +212,12 @@ namespace PNGBuddy
                                     {
                                         if (Muted)
                                         {
-                                            Ani.Visibility = Visibility.Hidden;
+                                            Idle.Visibility = Visibility.Hidden;
                                             IdleGrayScale.Visibility = Visibility.Visible;
                                         }
                                         else
                                         {
-                                            Ani.Visibility = Visibility.Visible;
+                                            Idle.Visibility = Visibility.Visible;
                                             IdleGrayScale.Visibility = Visibility.Hidden;
                                         }
                                     });
@@ -290,7 +289,7 @@ namespace PNGBuddy
 
         private async Task Identified()
         {
-            var inputMessage = new { op = 6, d = new { requestType = "GetInputList", requestId = "Ani" } };
+            var inputMessage = new { op = 6, d = new { requestType = "GetInputList", requestId = "Idle" } };
 
             await Socket!.SendAsync(Encoding.UTF8.GetBytes(JsonSerializer.Serialize(inputMessage)), WebSocketMessageType.Text, true, CancellationToken.None);
 
@@ -343,9 +342,9 @@ namespace PNGBuddy
             WindowState = WindowState.Minimized;
         }
 
-        private void Ani_SourceUpdated(object sender, DataTransferEventArgs e)
+        private void Idle_SourceUpdated(object sender, DataTransferEventArgs e)
         {
-            if (Ani.Source == null) return;
+            if (Idle.Source == null) return;
 
             var bitmapImage = new BitmapImage(new Uri(Settings.Default.IDLE_PICTURE));
             // Convert it to Gray

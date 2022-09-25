@@ -97,14 +97,14 @@ namespace PNGBuddy
             }
         }
 
-        private static string SelectFile(object sender, RoutedEventArgs e)
+        private static string? SelectFile(object sender, RoutedEventArgs e)
         {
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new()
             {
                 // Set filter for file extension and default file extension 
                 DefaultExt = ".png",
-                Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
+                Filter = "PNG Files (*.png)|*.png|JPEG Files (*.jpeg)|*.jpeg|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
             };
 
 
@@ -118,7 +118,7 @@ namespace PNGBuddy
                 return dlg.FileName;
             }
 
-            return string.Empty;
+            return null;
         }
 
         private void NumericInput_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -145,7 +145,7 @@ namespace PNGBuddy
             {
                 if (_MainWindow.Muted)
                 {
-                    _MainWindow.Ani.Visibility = Visibility.Hidden;
+                    _MainWindow.Idle.Visibility = Visibility.Hidden;
                     _MainWindow.IdleGrayScale.Visibility = Visibility.Visible;
                 }
             });
@@ -155,7 +155,7 @@ namespace PNGBuddy
         {
             await _MainWindow.Dispatcher.InvokeAsync(() =>
             {
-                _MainWindow.Ani.Visibility = Visibility.Visible;
+                _MainWindow.Idle.Visibility = Visibility.Visible;
                 _MainWindow.IdleGrayScale.Visibility = Visibility.Hidden;
             });
         }
