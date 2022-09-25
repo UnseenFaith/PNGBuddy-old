@@ -23,7 +23,7 @@ A PNGTuber program similar to [veadotube mini](https://olmewe.itch.io/veadotube-
   - Changes on OBS (names of inputs, muted state, etc.) are reflected in the application
 
 ## Installing
-The installer for PNGBuddy uses ClickOnce and will install the .NET 6 Runtime and automatically check for update when launching. You can download it here: 
+The exe comes prepackaged with everything you need to run the program. You can download the latest version here: 
 [PNGBuddy](https://github.com/UnseenFaith/PNGBuddy/releases/download/1.0.0/PNGBuddy.exe)
 
 May add portable downloads in the future, but for now this should suffice.
