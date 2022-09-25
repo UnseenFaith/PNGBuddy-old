@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoUpdaterDotNET;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -20,6 +21,8 @@ namespace PNGBuddy
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            AutoUpdater.Start("https://raw.githubusercontent.com/UnseenFaith/PNGBuddy/master/version.xml");
+
             if (Settings.Default.UPDATE)
             {
                 Settings.Default.Upgrade();

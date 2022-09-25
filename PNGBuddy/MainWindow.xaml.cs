@@ -8,6 +8,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.WebSockets;
 using System.Security.Cryptography;
 using System.Text;
@@ -45,10 +46,6 @@ namespace PNGBuddy
         public MainWindow()
         {
             InitializeComponent();
-            Initialize();
-
-            AutoUpdater.Start("https://rbsoft.org/updates/AutoUpdaterTest.xml");
-
 
             BlinkTimer = new() { Interval = TimeSpan.FromMilliseconds(Settings.Default.BLINK_INTERVAL) };
 
@@ -63,6 +60,8 @@ namespace PNGBuddy
             };
 
             BlinkTimer.Start();
+
+            Initialize();
         }
 
         private async void Initialize()
@@ -355,6 +354,11 @@ namespace PNGBuddy
             IdleGrayScale.Source = new FormatConvertedBitmap(bitmapImage, PixelFormats.Gray32Float, null, 0);
             // Create Opacity Mask for greyscale image as FormatConvertedBitmap does not keep transparency info
             IdleGrayScale.OpacityMask = new ImageBrush(bitmapImage);
-        }      
+        }
+
+        private void Main_Loaded(object sender, RoutedEventArgs e)
+        {
+            Initialize();
+        }
     }
 }

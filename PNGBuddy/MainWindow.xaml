@@ -16,6 +16,7 @@
     Height="600"
     AllowsTransparency="True"
     FontFamily="{DynamicResource MaterialDesignFont}"
+    Loaded="Main_Loaded"
     TextElement.FontSize="13"
     TextElement.FontWeight="Regular"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
