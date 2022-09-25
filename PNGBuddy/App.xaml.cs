@@ -17,5 +17,15 @@ namespace PNGBuddy
         {
             Settings.Default.Save();
         }
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            if (Settings.Default.UPDATE)
+            {
+                Settings.Default.Upgrade();
+                Settings.Default.UPDATE = false;
+                Settings.Default.Save();
+            }
+        }
     }
 }

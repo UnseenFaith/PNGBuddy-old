@@ -202,5 +202,17 @@ namespace PNGBuddy {
                 this["WEBSOCKET_PORT"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UPDATE {
+            get {
+                return ((bool)(this["UPDATE"]));
+            }
+            set {
+                this["UPDATE"] = value;
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     Exit="Application_Exit"
     ShutdownMode="OnMainWindowClose"
+    Startup="Application_Startup"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>

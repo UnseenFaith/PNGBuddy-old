@@ -47,5 +47,8 @@
     <Setting Name="WEBSOCKET_PORT" Type="System.String" Scope="User">
       <Value Profile="(Default)">4455</Value>
     </Setting>
+    <Setting Name="UPDATE" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
