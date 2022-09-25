@@ -1,0 +1,98 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {},
+    ".NETCoreApp,Version=v6.0/win-x64": {
+      "PNGBuddy/1.0.0": {
+        "dependencies": {
+          "MaterialDesignColors": "2.0.7-ci298",
+          "MaterialDesignThemes": "4.6.0-ci298",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "PNGBuddy.dll": {}
+        }
+      },
+      "MaterialDesignColors/2.0.7-ci298": {
+        "runtime": {
+          "lib/net6.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "2.0.7.0",
+            "fileVersion": "2.0.7.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/4.6.0-ci298": {
+        "dependencies": {
+          "MaterialDesignColors": "2.0.7-ci298"
+        },
+        "runtime": {
+          "lib/net6.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/6.0.0": {},
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.39.4716"
+          }
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PNGBuddy/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MaterialDesignColors/2.0.7-ci298": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uhFNMnZoAJ62XB/Wydf4C7enp0cTVl/RQHzDLIRz9MidZqGSW47gz5Hu4KtU8kbXKg+9v5/xxJyhLXtJEFu5qg==",
+      "path": "materialdesigncolors/2.0.7-ci298",
+      "hashPath": "materialdesigncolors.2.0.7-ci298.nupkg.sha512"
+    },
+    "MaterialDesignThemes/4.6.0-ci298": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gW+jNecP+Ab1wQPq8KbCM/bCZKpf7PLECBNb6DLse6K9MUxmR2muWwzosPl5sToEc4BCc4U+y6g4KXIeP86l3w==",
+      "path": "materialdesignthemes/4.6.0-ci298",
+      "hashPath": "materialdesignthemes.4.6.0-ci298.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+      "path": "microsoft.win32.systemevents/6.0.0",
+      "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.39",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    },
+    "System.Drawing.Common/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+      "path": "system.drawing.common/6.0.0",
+      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+    }
+  }
+}
