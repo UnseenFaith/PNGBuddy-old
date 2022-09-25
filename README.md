@@ -24,7 +24,7 @@ A PNGTuber program similar to [veadotube mini](https://olmewe.itch.io/veadotube-
 
 ## Installing
 The installer for PNGBuddy uses ClickOnce and will install the .NET 6 Runtime and automatically check for update when launching. You can download it here: 
-[PNGBuddy](https://raw.githubusercontent.com/UnseenFaith/PNGBuddy/master/PNGBuddy.exe)
+[PNGBuddy](https://github.com/UnseenFaith/PNGBuddy/releases/download/1.0.0/PNGBuddy.exe)
 
 May add portable downloads in the future, but for now this should suffice.
 
