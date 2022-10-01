@@ -106,7 +106,7 @@
     </Window.Background>
 
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="28" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+        <WindowChrome CaptionHeight="30" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
     </WindowChrome.WindowChrome>
 
     <DockPanel Background="Transparent">
@@ -151,6 +151,27 @@
                         Stroke="White"
                         StrokeThickness="1" />
                 </Button>
+                <Grid>
+                    <Button
+                        Name="MaxButton"
+                        Width="46"
+                        Height="32"
+                        Click="OnMaxButtonClick"
+                        RenderOptions.EdgeMode="Aliased"
+                        Style="{StaticResource TitleBarButtonStyle}">
+                        <materialDesign:PackIcon Kind="WindowMaximize" />
+                    </Button>
+                    <Button
+                        Name="RestoreButton"
+                        Width="46"
+                        Height="32"
+                        Click="OnMaxButtonClick"
+                        RenderOptions.EdgeMode="Aliased"
+                        Style="{StaticResource TitleBarButtonStyle}"
+                        Visibility="Hidden">
+                        <materialDesign:PackIcon Kind="WindowRestore" />
+                    </Button>
+                </Grid>
                 <Button Click="OnCloseButtonClick" Style="{StaticResource TitleBarCloseButtonStyle}">
                     <Path
                         Width="46"

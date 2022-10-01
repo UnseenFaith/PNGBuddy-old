@@ -9,6 +9,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <SignAssembly>False</SignAssembly>
     <IsPublishable>True</IsPublishable>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

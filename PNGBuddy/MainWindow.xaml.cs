@@ -18,6 +18,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
+using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
@@ -42,6 +43,12 @@ namespace PNGBuddy
         public ShakeBehavior ShakeBehavior = new();
 
         private SettingsWindow? SettingsWindow { get; set; }
+
+        private bool Maximized = false;
+        private double RestoreWidth = 0;
+        private double RestoreHeight = 0;
+        private double RestoreTop = 0;
+        private double RestoreLeft = 0;
 
         public MainWindow()
         {
@@ -343,6 +350,34 @@ namespace PNGBuddy
         private void OnMinButtonClick(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void OnMaxButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (Maximized)
+            {
+                RestoreButton.Visibility = Visibility.Hidden;
+                MaxButton.Visibility = Visibility.Visible;
+                Maximized = false;
+                Width = RestoreWidth;
+                Height = RestoreHeight;
+                Top = RestoreTop;
+                Left = RestoreLeft;
+            }
+            else
+            {
+                RestoreButton.Visibility = Visibility.Visible;
+                MaxButton.Visibility = Visibility.Collapsed;
+                Maximized = true;
+                RestoreWidth = Width;
+                RestoreHeight = Height;
+                RestoreTop = Top;
+                RestoreLeft = Left;
+                Width = SystemParameters.WorkArea.Width;
+                Height = SystemParameters.WorkArea.Height;
+                Top = SystemParameters.WorkArea.Top;
+                Left = SystemParameters.WorkArea.Left;
+            }
         }
 
         private void Idle_SourceUpdated(object sender, DataTransferEventArgs e)
