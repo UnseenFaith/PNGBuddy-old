@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using System.Windows;
 
 [assembly: ThemeInfo(
@@ -8,3 +9,6 @@ using System.Windows;
                                               //(used if a resource is not found in the page,
                                               // app, or any theme specific resource dictionaries)
 )]
+
+[assembly: Guid("a8193544-b0a9-40b5-a9c0-d4296bdeb268")]
+
