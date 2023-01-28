@@ -1,14 +1,9 @@
-﻿using AutoUpdaterDotNET;
-using MaterialDesignThemes.Wpf;
-using Microsoft.VisualBasic;
-using PNGBuddy.Messages;
+﻿using PNGBuddy.Messages;
 using PNGBuddy.Messages.Hello;
 using PNGBuddy.Types;
 using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Net;
 using System.Net.WebSockets;
 using System.Security.Cryptography;
 using System.Text;
@@ -18,7 +13,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
-using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
@@ -237,7 +231,7 @@ namespace PNGBuddy
                         case "InputCreated":
                             {
                                 var input = JsonSerializer.Deserialize<InputCreated>(ev.Data?.ToString()!);
-                                if (input?.InputKind == "wasapi_input_capture")
+                                if (input?.InputKind?.StartsWith("wasapi") == true)
                                 {
                                     await Dispatcher.InvokeAsync(() =>
                                     {
@@ -282,7 +276,7 @@ namespace PNGBuddy
                     {
                         case "GetInputList":
                             var inputs = JsonSerializer.Deserialize<Input>(res.Data?.ToString()!);
-                            var audio = inputs?.Inputs?.Where(i => i.Kind == "wasapi_input_capture").ToList();
+                            var audio = inputs?.Inputs?.Where(i => i.Kind!.StartsWith("wasapi")).ToList();
 
                             await Dispatcher.InvokeAsync(() =>
                             {
@@ -389,6 +383,11 @@ namespace PNGBuddy
             IdleGrayScale.Source = new FormatConvertedBitmap(bitmapImage, PixelFormats.Gray32Float, null, 0);
             // Create Opacity Mask for greyscale image as FormatConvertedBitmap does not keep transparency info
             IdleGrayScale.OpacityMask = new ImageBrush(bitmapImage);
+        }
+
+        private void Test()
+        {
+
         }
 
         private void Main_Loaded(object sender, RoutedEventArgs e)
